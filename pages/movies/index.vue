@@ -1,11 +1,6 @@
 <template>
   <section>
-    <form @submit.prevent="findMovies" style="padding: 20px">
-      <label id="movies-search"
-        ><input v-model="movieQuery" type="text" placeholder="search movies"
-      /></label>
-      <button class="submit-btn" type="submit">Search</button>
-    </form>
+    <MovieSearch @movies-search="showMovies"></MovieSearch>
     <div v-if="movies.length" class="flex" style="margin: 0 auto">
       <NuxtLink
         prefetch
@@ -20,20 +15,11 @@
 </template>
 
 <script setup>
-  const movieQuery = ref(null);
   const movies = ref([]);
-  const {
-    public: { omdbAPI_Key },
-  } = useRuntimeConfig();
-  async function findMovies() {
-    if (!movieQuery.value) return;
-    const { Search } = await $fetch(
-      `http://www.omdbapi.com?apiKey=${omdbAPI_Key}&s=${movieQuery.value}`
-    );
-    movies.value = Search;
+  function showMovies(moviesReceived) {
+    movies.value = moviesReceived;
   }
 </script>
-
 <style>
   .flex {
     display: flex;
