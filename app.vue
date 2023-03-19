@@ -1,20 +1,14 @@
 <template>
-  <div>
-    <nav style="display: flex">
-      <ul>
-        <li class="nav-item">
-          <nuxt-link to="/">Home</nuxt-link>
-        </li>
-        <li class="nav-item">
-          <nuxt-link to="/movies">Movies</nuxt-link>
-        </li>
-      </ul>
-    </nav>
+  <NuxtLayout>
     <NuxtPage></NuxtPage>
-  </div>
+  </NuxtLayout>
 </template>
 
-<script></script>
+<script>
+  useHead({
+    titleTemplate: "%s - Nuxt Movies App",
+  });
+</script>
 
 <style>
   ul {

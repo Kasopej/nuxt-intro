@@ -19,6 +19,10 @@
   function showMovies(moviesReceived) {
     movies.value = moviesReceived;
   }
+
+  useHead({
+    title: "Search Movies",
+  });
 </script>
 <style>
   .flex {
