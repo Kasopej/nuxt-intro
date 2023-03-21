@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav style="display: flex">
+    <nav class="flex">
       <ul>
         <li class="nav-item">
           <nuxt-link to="/">Home</nuxt-link>

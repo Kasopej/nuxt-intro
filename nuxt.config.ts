@@ -9,5 +9,6 @@ export default defineNuxtConfig({
         public: {
             omdbAPI_Key: process.env.OMDB_API_KEY
         }
-    }
+    },
+    modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt',],
 })
