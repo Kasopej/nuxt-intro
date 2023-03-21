@@ -10,11 +10,14 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.6.0",
     "@types/node": "^18.15.3",
+    "@vueuse/core": "^9.13.0",
+    "@vueuse/nuxt": "^9.13.0",
     "nuxt": "^3.3.1"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.7",
-    "pinia": "^2.0.33"
+    "pinia": "^2.0.33",
+    "pinia-plugin-persistedstate": "^3.1.0"
   },
   "overrides": {
     "vue": "latest"
