@@ -3,6 +3,9 @@
 </template>
 
 <script setup>
+  definePageMeta({
+    middleware: "auth",
+  });
   const {
     params: { id },
   } = useRoute();

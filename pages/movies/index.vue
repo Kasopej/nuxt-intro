@@ -15,14 +15,17 @@
 </template>
 
 <script setup>
+  useHead({
+    title: "Search Movies",
+  });
+  definePageMeta({
+    middleware: "auth",
+  });
+
   const movies = ref([]);
   function showMovies(moviesReceived) {
     movies.value = moviesReceived;
   }
-
-  useHead({
-    title: "Search Movies",
-  });
 </script>
 <style>
   .flex {

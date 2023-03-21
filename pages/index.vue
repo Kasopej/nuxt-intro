@@ -6,10 +6,16 @@
   useHead({
     title: "Home",
   });
-  const { data } = await useAsyncData(() => {
-    return $fetch("/api/helloWorld");
+  definePageMeta({
+    middleware: "auth",
   });
-  const message = data.value.message;
+  let message = ref(null);
+
+  async function callAPI() {
+    const { message: apiMessage } = await $fetch("/api/helloWorld");
+    message.value = apiMessage;
+  }
+  callAPI();
 </script>
 
 <style scoped></style>
